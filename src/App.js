@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import SingleCard from './components/SingleCard';
+import {useTranslation} from "react-i18next";
 
 const cardImages = [
   { "src": "/img/helmet-1.png", matched: false },
@@ -12,11 +13,17 @@ const cardImages = [
 ]
 
 function App() {
+  const [t, i18n] = useTranslation("global")
+
   const [cards, setCards] = useState([])
   const [turns, setTurns] = useState(0)
   const [choiceOne, setChoiceOne] = useState(null)
   const [choiceTwo, setChoiceTwo] = useState(null)
   const [disabled, setDisabled] = useState(false) 
+
+  const handleChangeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+  }
 
   const shuffleCards = () => {
     const shuffledCards = [...cardImages, ...cardImages]
@@ -66,8 +73,12 @@ function App() {
 
   return (
     <div className='App'>
-      <h1>Magic Match</h1>
-      <button onClick={shuffleCards}>New Game</button>
+      <div class="button-container">
+        <button onClick={() => handleChangeLanguage('en')} className="combined_button">EN</button>
+        <button onClick={() => handleChangeLanguage('ua')} className="combined_button">UA</button>
+      </div>
+      <h1>{t("header.title")}</h1>
+      <button onClick={shuffleCards} className='new_game_button'>{t("header.new_game_button")}</button>
 
       <div className='card-grid'>
         {cards.map(card => (
@@ -80,7 +91,7 @@ function App() {
           />
         ))}
       </div>
-      <p>Turns: {turns}</p>
+      <p>{t("body.turns")}: {turns}</p>
     </div>
   );
 }

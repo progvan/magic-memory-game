@@ -1,0 +1,9 @@
+{
+    "header": {
+        "title": "Magic Match",
+        "new_game_button": "New Game"
+    },
+    "body": {
+        "turns": "Turns"
+    }
+}
