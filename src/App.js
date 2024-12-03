@@ -39,7 +39,9 @@ function App() {
     }
 
   const handleChoice = (card) => {
-    choiceOne ? setChoiceTwo(card) : setChoiceOne(card)
+    if (card.id !== choiceOne?.id) {
+      choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
+    }
   }
 
   useEffect(() => {

@@ -1,6 +1,6 @@
 .card {
     position: relative;
-    cursor: pointer;
+    cursor: pointer; 
 }
 
 .card img {
@@ -9,6 +9,7 @@
     display: block;
     border: 2px solid #fff;
     border-radius: 6px;
+    pointer-events: none; 
 }
 
 .card .front {
