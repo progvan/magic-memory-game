@@ -4,12 +4,12 @@ import SingleCard from './components/SingleCard';
 import {useTranslation} from "react-i18next";
 
 const cardImages = [
-  { "src": "/img/helmet-1.png", matched: false },
-  { "src": "/img/potion-1.png", matched: false },
-  { "src": "/img/ring-1.png", matched: false },
-  { "src": "/img/scroll-1.png", matched: false },
-  { "src": "/img/shield-1.png", matched: false },
-  { "src": "/img/sword-1.png", matched: false }
+  { "src": "/img/apple-1.png", matched: false },
+  { "src": "/img/cherrie-1.png", matched: false },
+  { "src": "/img/mango-1.png", matched: false },
+  { "src": "/img/pomegranate-1.png", matched: false },
+  { "src": "/img/orange-1.png", matched: false },
+  { "src": "/img/strawberry-1.png", matched: false }
 ]
 
 function App() {
@@ -21,8 +21,10 @@ function App() {
   const [choiceTwo, setChoiceTwo] = useState(null)
   const [disabled, setDisabled] = useState(false) 
 
+  
   const handleChangeLanguage = (lang) => {
     i18n.changeLanguage(lang);
+    window.localStorage.setItem('USER_LANGUAGE', lang)
   }
 
   const shuffleCards = () => {
@@ -73,7 +75,7 @@ function App() {
 
   return (
     <div className='App'>
-      <div class="button-container">
+      <div className="button-container">
         <button onClick={() => handleChangeLanguage('en')} className="combined_button">EN</button>
         <button onClick={() => handleChangeLanguage('ua')} className="combined_button">UA</button>
       </div>
