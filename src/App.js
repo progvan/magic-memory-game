@@ -4,12 +4,12 @@ import SingleCard from './components/SingleCard';
 import {useTranslation} from "react-i18next";
 
 const cardImages = [
-  { "src": "/img/apple-1.png", matched: false },
-  { "src": "/img/cherrie-1.png", matched: false },
-  { "src": "/img/mango-1.png", matched: false },
-  { "src": "/img/pomegranate-1.png", matched: false },
-  { "src": "/img/orange-1.png", matched: false },
-  { "src": "/img/strawberry-1.png", matched: false }
+  { "src": `${process.env.PUBLIC_URL}/img/apple-1.png`, matched: false },
+  { "src": `${process.env.PUBLIC_URL}/img/cherrie-1.png`, matched: false },
+  { "src": `${process.env.PUBLIC_URL}/img/mango-1.png`, matched: false },
+  { "src": `${process.env.PUBLIC_URL}/img/pomegranate-1.png`, matched: false },
+  { "src": `${process.env.PUBLIC_URL}/img/orange-1.png`, matched: false},
+  { "src": `${process.env.PUBLIC_URL}/img/strawberry-1.png`, matched: false }
 ]
 
 function App() {
